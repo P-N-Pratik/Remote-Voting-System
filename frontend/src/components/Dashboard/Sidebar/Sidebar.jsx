@@ -5,6 +5,8 @@ const Sidebar = () => {
   const navigate = useNavigate();
   return (
     <div className=' flex sm:flex-col sm:gap-40'>
+
+
       <div className=' flex sm:flex-col '>
         <button className='flex item-center  hover:bg-orange-500 rounded-lg px-4 py-3 gap-2 w-full'onClick={() => navigate('/')}>
         <lord-icon
