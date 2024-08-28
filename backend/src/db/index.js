@@ -3,9 +3,9 @@ import {DB_NAME} from "../constants.js";
 
 const connectionDB = async () => {
     try{
-        // const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URI}`);
-        const connectionInstance = await mongoose.connect("mongodb://0.0.0.0:27017/RemoteVotingSystem");
-        // console.log("MONGODB_URI:", process.env.MONGODB_URI);
+        const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URI}`);
+        // const connectionInstance = await mongoose.connect("mongodb://0.0.0.0:27017/RemoteVotingSystem");
+        console.log("MONGODB_URI:", process.env.MONGODB_URI);
         console.log(process.env.PORT)
         console.log(`MongodB Connected : ${connectionInstance.connection.host}`)
     }

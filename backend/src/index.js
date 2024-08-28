@@ -1,14 +1,26 @@
 
 import dotenv from "dotenv";
 import connectionDB from "./db/index.js";
+import {app} from '../src/app.js'
 
+// ---------------------------------------------------------------------------------------------
+// Exportation of Models Only
 
-
+import {User} from './models/user.model.js'
+// ---------------------------------------------------------------------------------------------
 dotenv.config({
-    path : './env'
+    path : './.env'
 })
 
-connectionDB();
+connectionDB()
+.then(()=>{
+    app.listen(process.env.PORT || 8000,()=>{
+        console.log(`Server is Running at Port : ${process.env.PORT}`);
+    })
+})
+.catch((err)=>{
+    console.log("MONGO DB Connection Failed", err);
+})
 
 
 
