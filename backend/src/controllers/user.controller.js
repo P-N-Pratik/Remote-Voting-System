@@ -74,9 +74,48 @@ const registerUser = asyncHandler( async (req,res) => {
 });
 
 const loginUser = asyncHandler(async (req, res)=>{
-    res.status(200).json({
-        message:"ok"
-    })
+
+    const {nameAsPerVoterId,voterIdNo} = req.body;
+
+    if([nameAsPerVoterId, voterIdNo].some((field)=> field.trim === "")){
+        throw new ApiError(400, "All fields are required");
+    }
+
+    const doesExist = await User.findOne({voterIdNo});
+
+    if(!doesExist){
+        throw new ApiError(400, "You are not yet Registered By the Election Board");
+    }
+
+    return res.status(201).json(
+        new ApiResponse(200, doesExist,"User Logged In SuccessFully")
+    )
+
+    // res.status(200).json({
+    //     message:"ok"
+    // })
 })
 
-export {registerUser, loginUser}
+
+const loginAdmin = asyncHandler(async (req, res)=>{
+
+    const {adminName, adminPassword} = req.body;
+
+    if([adminName, adminPassword].some((field)=> field.trim === "")){
+        throw new ApiError(400, "All fields are required")
+    }
+
+    const doesAdminExist = await ecAdmin({adminName, adminPassword});
+    if(!doesAdminExist){
+        throw new ApiError(400, "Not an Authorised User")
+    }
+
+    return res.status(201).json(
+        new ApiResponse(200, doesAdminExist,"Admin Logged In SuccessFully")
+    )
+
+    // res.status(200).json({
+    //     message:"ok"
+    // })
+})
+export {registerUser, loginUser, loginAdmin};
