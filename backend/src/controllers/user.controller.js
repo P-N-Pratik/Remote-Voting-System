@@ -78,7 +78,7 @@ const loginUser = asyncHandler(async (req, res)=>{
     const {nameAsPerVoterId,voterIdNo} = req.body;
 
     if([nameAsPerVoterId, voterIdNo].some((field)=> field.trim === "")){
-        throw new ApiError(400, "All fields are required");
+        throw new ApiError(400, "Name or VoterId is Invalid");
     }
 
     const doesExist = await User.findOne({voterIdNo});

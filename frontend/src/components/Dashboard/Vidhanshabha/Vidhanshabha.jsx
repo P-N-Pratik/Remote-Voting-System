@@ -6,7 +6,7 @@ const Vidhanshabha=()=> {
        <div className='px-4'>
       <h1 className='font-mono text-2xl font-semibold '>Vidhanshabha Election</h1>
 
-      <div className='flex justify-between mt-8'>
+      <div className='grid grid-cols-2 sm:flex sm:justify-between mt-8'>
         <button className='flex item-center  hover:bg-orange-500 rounded-lg px-4 py-3 gap-2 w-fit'>
             Candidate 
         </button>

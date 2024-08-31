@@ -1,8 +1,8 @@
 import React from 'react'
-// import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Signin = () => {
-    // const navigate = useNavigate();
+    
   return (
     <div className='flex flex-col sm:flex-row min-h-screen bg-black gap-4 p-10 text-white '>
         <div className=' bg-emerald-400 basis-1/2 rounded-2xl'>
@@ -16,17 +16,17 @@ const Signin = () => {
                 Choose the Option
             </h1>
             <div className='flex flex-row m-5 gap-5 justify-between mt-10'>
-                <button onClick={() => navigate('/electioncommision')} className='border-emerald-400 hover:bg-white border-2 px-4 py-2 rounded-full w-fit'>
-                    Election Commission
+                <button  className='border-emerald-400 hover:bg-white border-2 px-4 py-2 rounded-full w-fit'>
+                 <Link to='/ecdashboard'>  Election Commission</Link> 
                 </button>
-                <button onClick={() => navigate('/voter')} className='border-emerald-400 hover:bg-white  border-2 px-4 py-2 rounded-full w-48'>
-                    Voter
+                <button  className='border-emerald-400 hover:bg-white  border-2 px-4 py-2 rounded-full w-48'>
+                  <Link to='/voterdashboard' >Voter</Link>
                 </button>
             </div>
             <div className=' justify-center'>
                 <input className='m-5 rounded-full border border-green-500 w-3/4 p-4 py-1 bg-black' type="text" placeholder='username' />
                 <input className='m-5 rounded-full border border-green-500 w-3/4 p-4 py-1 bg-black' type="text" placeholder='password' />
-                <button onClick={() => navigate('/')} className='m-5 border-emerald-400 hover:bg-white  border-2 px-4 py-2 rounded-full w-48'>
+                <button onClick={() => navigate('#')} className='m-5 border-emerald-400 hover:bg-white  border-2 px-4 py-2 rounded-full w-48'>
                     Log In
                 </button>
             </div>
