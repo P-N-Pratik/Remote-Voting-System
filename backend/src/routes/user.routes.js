@@ -20,7 +20,7 @@ router.route("/register").post(
     ]),
     registerUser);
 
-router.route("/loginUser").post(loginUser);
+router.route("/loginVoter").post(loginUser);
 
 router.route("/loginAdmin").post(loginAdmin);
 

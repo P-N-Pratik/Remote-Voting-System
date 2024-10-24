@@ -6,17 +6,12 @@ import bcrypt from "bcrypt";
 
 
 const userSchema = new mongoose.Schema({
-
-
-    userName : {
+    fullName : {
         type : String,
         required : true,
-        unique : true,
-        lowercase :true,
         trim :true,
         // index:true,
     },
-
     email : {
         type : String,
         required : true,
@@ -25,59 +20,73 @@ const userSchema = new mongoose.Schema({
         trim :true,
         
     },
-
-    
-    fullName : {
+    address : {
         type : String,
         required : true,
         trim :true, 
         // unique:true, 
     },
+    state: {
+        type:String,
+        required: true,
+        trim: true
+    },
+    district: {
+        type:String,
+        required: true,
+        trim: true
 
+    },
+    taluka: {
+        type:String,
+        required: true,
+        trim: true
+    },
+    city: {
+        type:String,
+        required: true,
+        trim: true
+
+    },
+    pincode: {
+        type:Number,
+        required: true,
+        trim: true
+    },
+    municipalCorporation: {
+        type:String,
+        required: true,
+        trim: true
+    },
+    constituency: {
+        type:String,
+        required: true,
+        trim: true
+    },
     avatar:{
         type : String, // cloudinary url
         required :true,
     },
-    // coverImage :{
-    //     type : String,
-
-    // },
-
     voterIdNo : {
         type : Number,
         required : true,
         trim :true, 
         unique:true, 
     },
-
     aadharNo : {
         type : Number,
         required : true,
         trim :true, 
         unique:true, 
     },
-    phoneNo : {
+    mobileNo : {
         type : Number,
         required : true,
         trim :true, 
         unique:true, 
     },
-
-    address : {
-        type : String,
-        required : true,
-        trim :true, 
-        
-    },
-
-    state : {
-        type : String,
-        required : true,
- 
-    },
-
     refreshToken :{
-
+        type: String
     }
 },
 {
@@ -100,7 +109,7 @@ userSchema.methods.generateAccessToken = function(){
         {
             _id: this._id,
             email: this.email,
-            username: this.userName
+            // username: this.userName
 
                 
         },

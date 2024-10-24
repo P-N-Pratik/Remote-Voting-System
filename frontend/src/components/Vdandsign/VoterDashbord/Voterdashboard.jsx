@@ -1,13 +1,26 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 
 const Voterdashboard=()=> {
+  
+  const [user, setUser] = useState({
+
+  })
+
+  useEffect( ()=>{
+    // const user = JSON.parse(localStorage.getItem("user"));
+
+    setUser(JSON.parse(localStorage.getItem("user")))
+
+    
+
+  }, [])
   return (
     <div className='flex flex-col sm:flex-row min-h-screen bg-black gap-3 p-3 text-white '>
         <div className='flex flex-col basis-1/4 gap-3 '>
            <div className='bg-orange-400 h-full rounded-lg p-4 ' >
              <div className='text-center'>
-               <img className='mt-8 mx-auto rounded-full' src="p4.jpg" alt="" />
-               <h1 className='mt-3 '>Voter ID No.</h1>
+               <img className='mt-8 mx-auto rounded-full' src={user?.avatar} alt="Not Found" />
+               <h1 className='mt-3 '>Voter ID No. {user?.voterIdNo}</h1>
                <table class="table-fixed w-full">
                         <thead>
                           <tr >
@@ -18,27 +31,43 @@ const Voterdashboard=()=> {
                         <tbody>
                           <tr>
                             <td className='text-left py-2'>Name : </td>
-                            <td className='text-left py-2'>Arnava Tivari</td>
+                            <td className='text-left py-2'>{user?.fullName}</td>
                           </tr>
-                          <tr>
+                          {/* <tr>
                             <td className='text-left py-2'>S/O : </td>
-                            <td className='text-left py-2'>Mukund Kumar</td>
-                          </tr>
+                            <td className='text-left py-2'>{user.userName}</td>
+                          </tr> */}
                           <tr>
                             <td className='text-left py-2'>Aadhar No. : </td>
-                            <td className='text-left py-2'>7772-8855-9444</td>
+                            <td className='text-left py-2'>{user?.aadharNo}</td>
                           </tr>
                           <tr>
-                            <td className='text-left py-2'>Phone No. : </td>
-                            <td className='text-left py-2'>9341616250</td>
+                            <td className='text-left py-2'>District : </td>
+                            <td className='text-left py-2'>{user?.district}</td>
                           </tr>
                           <tr>
+                            <td className='text-left py-2'>Taluka : </td>
+                            <td className='text-left py-2'>{user?.taluka}</td>
+                          </tr>
+                          {/* <tr>
+                            <td className='text-left py-2'>Mobile No. : </td>
+                            <td className='text-left py-2'>{user?.mobileNo}</td>
+                          </tr> */}
+                          {/* <tr>
                             <td className='text-left py-2'>Address : </td>
-                            <td className='text-left py-2'>Area 1</td>
-                          </tr>
+                            <td className='text-left py-2'>{user?.address}</td>
+                          </tr> */}
                           <tr>
                             <td className='text-left py-2'>State : </td>
-                            <td className='text-left py-2'>Bihar</td>
+                            <td className='text-left py-2'>{user?.state}</td>
+                          </tr>
+                          <tr>
+                            <td className='text-left py-2'>Constituency : </td>
+                            <td className='text-left py-2'>{user?.constituency}</td>
+                          </tr>
+                          <tr>
+                            <td className='text-left py-2'>Municipal Corporation : </td>
+                            <td className='text-left py-2'>{user?.municipalCorporation}</td>
                           </tr>
                         </tbody>
                       </table>
