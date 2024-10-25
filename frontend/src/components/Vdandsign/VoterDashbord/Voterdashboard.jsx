@@ -1,19 +1,22 @@
 import React,{useState,useEffect} from 'react'
+import { useNavigate } from "react-router-dom";
+
 
 const Voterdashboard=()=> {
   
-  const [user, setUser] = useState({
-
-  })
+  const [user, setUser] = useState({})
 
   useEffect( ()=>{
     // const user = JSON.parse(localStorage.getItem("user"));
 
     setUser(JSON.parse(localStorage.getItem("user")))
-
-    
-
   }, [])
+
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate("/other"); // Redirects to the "/other" route
+  };
   return (
     <div className='flex flex-col sm:flex-row min-h-screen bg-black gap-3 p-3 text-white '>
         <div className='flex flex-col basis-1/4 gap-3 '>
@@ -21,7 +24,7 @@ const Voterdashboard=()=> {
              <div className='text-center'>
                <img className='mt-8 mx-auto rounded-full' src={user?.avatar} alt="Not Found" />
                <h1 className='mt-3 '>Voter ID No. {user?.voterIdNo}</h1>
-               <table class="table-fixed w-full">
+               <table className="table-fixed w-full">
                         <thead>
                           <tr >
                             <th className=''></th>
@@ -80,7 +83,8 @@ const Voterdashboard=()=> {
         <div className='basis-7/12 bg-zinc-900 rounded-lg p-2' >
            <div className='flex flex-col justify-center'>
               <img className='mx-auto' src="p5.png" alt="" />
-              <button className='mx-20 mt-4 bg-orange-400 hover:bg-orange-500 px-6 py-4 rounded-full '>Ballet Box</button>
+              <button className='mx-20 mt-4 bg-orange-400 hover:bg-orange-500 px-6 py-4 rounded-full ' onClick={handleRedirect}>Ballet Box</button>
+           
            </div>
         </div>
 
@@ -98,7 +102,7 @@ const Voterdashboard=()=> {
                   History
                 </h1>
                   <div>
-                      <table class="table-fixed w-full">
+                      <table className="table-fixed w-full">
                         <thead>
                           <tr >
                             <th className='text-left w-4/5 p-3 '>Election</th>

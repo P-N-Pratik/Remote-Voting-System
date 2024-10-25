@@ -13,6 +13,7 @@ import Panchayat from './components/Dashboard/Panchayat/Panchayat';
 import Voter from './components/Dashboard/Voter/Voter';
 import Setting from './components/Dashboard/Setting/Setting';
 import Voterdashboard from './components/Vdandsign/VoterDashbord/Voterdashboard';
+import CandidateList from './components/Dashboard/Voter/Candidateslist';
 
 
 const App =() => {
@@ -32,7 +33,8 @@ const App =() => {
                <Route  path="/ecdashboard/voterdeatil" element = {<Voter/>}></Route>
                <Route  path="/ecdashboard/setting" element = {<Setting/>}></Route> 
             </Route>
-            <Route path='/voterdashboard' element = {<Voterdashboard/>}></Route>
+            <Route path="/voterdashboard" element = {<Voterdashboard/>}></Route>
+            <Route path="/other" element = {<CandidateList/>}></Route>           
         </Routes>
      </BrowserRouter>
   )
