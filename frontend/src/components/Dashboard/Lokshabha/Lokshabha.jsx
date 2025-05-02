@@ -5,9 +5,9 @@ const Lokshabha=()=> {
   return (
     
     <div className='px-4'>
-      <h1 className='font-mono text-2xl font-semibold '>Lokshabha Election</h1>
+      <h1 className='font-mono text-2xl font-semibold'>Lokshabha Election</h1>
 
-      <div className='grid grid-cols-2 sm:flex sm:justify-between mt-8'>
+      <div className='grid sm:flex sm:justify-between mt-8'>
        <Link to="/ecdashboard/lokshabha/candidate">
         <button className='flex item-center  hover:bg-orange-500 rounded-lg px-4 py-3 gap-2 w-fit'>
           Candidate
@@ -19,11 +19,11 @@ const Lokshabha=()=> {
             Constituency
         </button>
         </Link>
-        <Link to="/ecdashboard/lokshabha/electionselection">
-        <button className='flex item-center  hover:bg-orange-500 rounded-lg px-4 py-3 gap-2 w-fit'>
+        {/*<Link to="/ecdashboard/lokshabha/electionselection">
+         <button className='flex item-center  hover:bg-orange-500 rounded-lg px-4 py-3 gap-2 w-fit'>
             Election
-        </button>
-        </Link>
+        </button> 
+        </Link>*/}
         <Link to ="/ecdashboard/lokshabha/result">
         <button className='flex item-center  hover:bg-orange-500 rounded-lg px-4 py-3 gap-2 w-fit'>
             Result 

@@ -2,9 +2,9 @@ const { ethers } = require("hardhat");
 
 async function main() {
     const names = ["Jay", "Jignesh", "Amit", "Arnav"];
-    const parties = ["BJP", "AAP", "INC", "CPI"];
+    const parties = ["Party 1", "Party 2", "Party 3", "Party 4"];
     // const cities = ["", ""];
-    const symbols = ["/bjp.png", "/aap.jpg", "/inc.png", "/cpi.png"]; // Paths to your symbol images in the public folder
+    const symbols = ["/img.png", "/img.png", "/img.png", "/img.png"]; // Paths to your symbol images in the public folder
     const duration = 72000; // Election duration in seconds
 
     const Voting = await ethers.getContractFactory("Voting");

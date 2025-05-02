@@ -6,7 +6,7 @@ const CandidateList = () => {
   const [candidates, setCandidates] = useState([]);
   const [user, setUser] = useState({});
 
-  // Fetch user data from localStorage on mount
+  // Fetch user data from localStorage 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
     if (storedUser) {
@@ -23,7 +23,7 @@ const CandidateList = () => {
         await provider.send("eth_requestAccounts", []); // Request access to MetaMask
 
         const signer = provider.getSigner();
-        const contractAddress = "0x2E7c5EaE221d1D80A7f7eadb52ecF559c14ff734"; // Replace with your contract address
+        const contractAddress = "0xAbf6d71392869865A30DcE9310424427f56021Ca"; 
         const votingContract = new ethers.Contract(contractAddress, VotingABI.abi, signer);
 
         // Fetch candidates array
@@ -42,7 +42,7 @@ const checkVoterStatus = async (voterId) => {
   try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
-      const contractAddress = "0x2E7c5EaE221d1D80A7f7eadb52ecF559c14ff734"; 
+      const contractAddress = "0xAbf6d71392869865A30DcE9310424427f56021Ca"; 
       const votingContract = new ethers.Contract(contractAddress, VotingABI.abi, signer);
 
       // Query voter status using the new checkIfVoted function
@@ -77,7 +77,7 @@ const checkVoterStatus = async (voterId) => {
       await provider.send("eth_requestAccounts", []);
 
       const signer = provider.getSigner();
-      const contractAddress = "0x2E7c5EaE221d1D80A7f7eadb52ecF559c14ff734";
+      const contractAddress = "0xAbf6d71392869865A30DcE9310424427f56021Ca";
       const votingContract = new ethers.Contract(contractAddress, VotingABI.abi, signer);
 
       // Call the vote function with voterId and candidateIndex

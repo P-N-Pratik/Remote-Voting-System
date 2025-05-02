@@ -22,7 +22,7 @@ const Voterdashboard=()=> {
         <div className='flex flex-col basis-1/4 gap-3 '>
            <div className='bg-orange-400 h-full rounded-lg p-4 ' >
              <div className='text-center'>
-               <img className='mt-8 mx-auto rounded-full' src={user?.avatar} alt="Not Found" />
+               <img className='mt-8 mx-auto rounded-full' src='src\assets\profile.png' alt="Not Found" />
                <h1 className='mt-3 '>Voter ID No. {user?.voterIdNo}</h1>
                <table className="table-fixed w-full">
                         <thead>

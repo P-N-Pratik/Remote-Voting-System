@@ -14,7 +14,7 @@ const Result = () => {
         await provider.send("eth_requestAccounts", []); // Request access to MetaMask
 
         const signer = provider.getSigner();
-        const contractAddress = "0x2E7c5EaE221d1D80A7f7eadb52ecF559c14ff734"; // Replace with your contract address
+        const contractAddress = "0x00628Ef11a15440381f67747edBeA42ad623256d"; // Replace with your contract address
         const votingContract = new ethers.Contract(
           contractAddress,
           VotingABI.abi,
